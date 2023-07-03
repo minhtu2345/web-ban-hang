@@ -3,7 +3,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-0">
   <div class="navbar-nav collapse navbar-collapse">
-    <a class="nav-item nav-link" href="/admin">Quản lý nhóm sản phẩm</a>
+    <a class="nav-item nav-link active" href="/">Trang Chủ</a>
+    <a class="nav-item nav-link" href="/admin/category/index">Quản lý nhóm sản phẩm</a>
     <a class="nav-item nav-link" href="/admin/product/index">Quản lý sản phẩm</a>
     <a class="nav-item nav-link" href="/admin/account/index">Quản lý tài khoản</a>
     <a class="nav-item nav-link" href="/admin/orderdetail/index">Quản lý đơn hàng</a>

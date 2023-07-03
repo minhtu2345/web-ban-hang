@@ -19,6 +19,18 @@ CREATE TABLE Products
     FOREIGN KEY (Categoryid) REFERENCES Categories (id)
 );
 
+select * from Products
+
+INSERT INTO Products (name, image, price, Categoryid, Createdate, available)
+VALUES 
+('IPhone x', 'http://didonghan.vn/pic/Product/iphone-x-1-min.png', 10.99, '1', '2023-06-15', 1),
+('Iphone xs Max', 'https://tse3.mm.bing.net/th?id=OIP.ewwhHHowJsWUepJ39KiT0AHaHa&pid=Api&P=0&h=180', 19.99, '1', '2023-06-18', 1),
+('xeomi', 'https://tse1.mm.bing.net/th?id=OIP.hWg38Pk92kLAb8GWWHCKxAHaGO&pid=Api&P=0&h=180', 8.50, '2', '2023-06-20', 0),
+('IPhone x', 'http://didonghan.vn/pic/Product/iphone-x-1-min.png', 10.99, '1', '2023-06-15', 1),
+('Iphone xs Max', 'https://tse3.mm.bing.net/th?id=OIP.ewwhHHowJsWUepJ39KiT0AHaHa&pid=Api&P=0&h=180', 19.99, '1', '2023-06-18', 1),
+('xeomi', 'https://tse1.mm.bing.net/th?id=OIP.hWg38Pk92kLAb8GWWHCKxAHaGO&pid=Api&P=0&h=180', 8.50, '2', '2023-06-20', 0);
+
+
 CREATE TABLE Accounts
 (
     username  varchar(100) PRIMARY KEY,

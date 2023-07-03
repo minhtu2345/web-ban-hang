@@ -1,5 +1,6 @@
 package com.demo.controller;
 
+import com.demo.service.AccountDao;
 import com.demo.model.Account;
 import com.demo.model.Order;
 import com.demo.model.OrderDetail;
@@ -43,6 +44,10 @@ public class UserController {
 	CartService cart;
 
 	@Autowired
+	AccountDao accountDao;
+
+
+	@Autowired
 	ProductRepo repo;
 
 	@Autowired
@@ -53,6 +58,9 @@ public class UserController {
 
 	@Autowired
 	OrderRepo orderRepo;
+
+
+
 
 	@ModelAttribute("cart")
 	CartService getCart(){
@@ -186,14 +194,33 @@ public class UserController {
 		return "home/about";
 	}
 
+	@RequestMapping("/lienhe")
+	public String lienhe(Model model) {
+		return "home/lienhe";
+	}
+
 	@GetMapping("/login")
 	public String login(){
 		return "login";
 	}
 
+
 	@PostMapping("/login")
 	public String login(@RequestParam String username, @RequestParam String password, Model model) {
 		// TODO: Check if user/password exists in database
+//		Account user = accountDao.getOne(username);
+//		if(!user.getPassword().equals(password)) {
+//			model.addAttribute("message", "Invalid password");
+//		} else {
+//			String uri = (String) session.getAttribute("security-uri");
+//			session.setAttribute("admin",user);
+//			if(uri != null) {
+//				return "redirect:" + uri;
+//			} else {
+//				model.addAttribute("message", "Login succeed");
+//			}
+//		}
+
 		Optional<Account> acc = ac.findByUsernameAndPassword(username, password);
 		if(acc.isPresent()) {
 			session.setAttribute("username", username);

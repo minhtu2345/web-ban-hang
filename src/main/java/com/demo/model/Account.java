@@ -28,4 +28,11 @@ public class Account implements Serializable {
     @NotBlank(message = "Không được để trống email")
     @Email(message = "Nhập đúng định dạng email")
     String email;
+
+    Boolean activated;
+    Boolean admin;
+
+    public boolean isAdmin(){
+        return admin != null && admin;
+    }
 }
