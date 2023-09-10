@@ -8,14 +8,13 @@ import com.demo.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -31,6 +30,28 @@ public class AdminController {
 
     @Autowired
     OrderDetailRepo repo3;
+
+    @ModelAttribute("admin")
+    public Map<Boolean, String> gioitinh() {
+        Map<Boolean,String> admin = new HashMap<>();
+        admin.put(false, "Nhân Viên");
+        admin.put(true, "Chủ");
+
+        return admin;
+
+    }
+
+
+    @ModelAttribute("kichhoat")
+    public Map<Boolean, String> kichhoat() {
+        Map<Boolean,String> admin = new HashMap<>();
+        admin.put(true, "Đang Kích hoạt");
+        admin.put(false, "không kích hoạt");
+
+        return admin;
+
+    }
+
     //  Category
     @GetMapping("/admin/category/index")
     public String listCategory(Model model){

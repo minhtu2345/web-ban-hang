@@ -7,6 +7,8 @@ CREATE TABLE Categories
     name VARCHAR(100) COLLATE Latin1_General_100_BIN2_UTF8 NOT NULL
 );
 
+select * from Categories
+
 CREATE TABLE Products
 (
     id         INT PRIMARY KEY IDENTITY (1, 1),
@@ -42,6 +44,13 @@ CREATE TABLE Accounts
     admin     tinyint
 );
 
+INSERT INTO Accounts (username, password, fullname, email, photo, activated, admin)
+VALUES ('user1', 'hashed_password_1', 'User One', 'user1@example.com', '/path/to/photo1.jpg', 1, 1);
+INSERT INTO Accounts (username, password, fullname, email, photo, activated, admin)
+VALUES ('admin1', 'hashed_password_2', 'Admin One', 'admin1@example.com', '/path/to/photo2.jpg', 1, 1);
+
+select * from Accounts
+
 create table Orders
 (
     id         BIGINT PRIMARY KEY IDENTITY (1, 1),
@@ -76,5 +85,6 @@ from OrderDetails
 
 delete
 from Orders
+
 select *
 from Orders

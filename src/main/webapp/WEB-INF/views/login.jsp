@@ -3,9 +3,9 @@
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <div class="bg-login">
+  <i text="${message}" style="text-align: center"></i>
   <div class="login-form">
     <h3>Đăng nhập</h3>
-
     <form action="/login" method="POST" style="margin-top: 30px;">
       <div class="mt-3">
         <label for="username" class="mb-1">Tên tài khoản</label>

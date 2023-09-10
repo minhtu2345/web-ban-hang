@@ -93,9 +93,6 @@ public class UserController {
 			@RequestParam("keywords") Optional<String> kw,
 			Model model) {
 
-		if(session.getAttribute("username") == null){
-			return  "redirect:/login";
-		}
 		model.addAttribute("priceRangeList", priceRangeList);
 		model.addAttribute("categoryList", categoryService.getAll());
 		model.addAttribute("productList", productService.getAll());
@@ -208,18 +205,7 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(@RequestParam String username, @RequestParam String password, Model model) {
 		// TODO: Check if user/password exists in database
-//		Account user = accountDao.getOne(username);
-//		if(!user.getPassword().equals(password)) {
-//			model.addAttribute("message", "Invalid password");
-//		} else {
-//			String uri = (String) session.getAttribute("security-uri");
-//			session.setAttribute("admin",user);
-//			if(uri != null) {
-//				return "redirect:" + uri;
-//			} else {
-//				model.addAttribute("message", "Login succeed");
-//			}
-//		}
+
 
 		Optional<Account> acc = ac.findByUsernameAndPassword(username, password);
 		if(acc.isPresent()) {

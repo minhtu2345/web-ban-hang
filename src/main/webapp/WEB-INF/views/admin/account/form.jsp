@@ -38,5 +38,22 @@
         </div>
     </div>
 
+    <div class="row mt-2">
+        <div class="col-4">activated :</div>
+        <div class="col-8" >
+            <form:radiobuttons path="activated" items="${kichhoat}"></form:radiobuttons>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-4">Vai trò:</div>
+        <div class="col-8" >
+            <form:select path="admin">
+                <form:option value="">----------</form:option>
+                <form:options items="${admin}" ></form:options>
+            </form:select>
+        </div>
+    </div>
+
     <form:button type="submit" class="btn btn-primary" onclick="return alert('Bạn đã Thêm thành công')">Add</form:button>
 </form:form>
