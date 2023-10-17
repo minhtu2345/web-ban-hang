@@ -17,6 +17,6 @@ public class AccountDao {
 
     public Account getOne(String username) {
         return accountRepo.findById(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Username " + username + " not found."));
+                .orElseThrow(() -> new UsernameNotFoundException("username " + username + " not found."));
     }
 }

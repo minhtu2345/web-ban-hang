@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                             .roles(roles)
                             .build();
                 } catch (NoSuchElementException e) {
-                    throw new UsernameNotFoundException("Username " + username + " not found.");
+                    throw new UsernameNotFoundException("username " + username + " not found.");
                 }
             }
         };

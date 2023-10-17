@@ -221,8 +221,7 @@ public class UserController {
 		System.out.println("address=" + address);
 		System.out.println("items=" + cart.getItems());
 		String un = (String) session.getAttribute("username");
-		Account acc = ac.findById(un).orElse(null);
-		if(acc != null) {
+		Account acc = ac.findByUsername(un);
 			Order order = new Order();
 			order.setAccount(acc);
 			order.setAddress(address);
@@ -234,8 +233,7 @@ public class UserController {
 			}
 
 			cart.clear();
-
-		}
+			
 		return "redirect:/";
 	}
 
